@@ -31,7 +31,7 @@ STYLE?=default
 template=osmbase.map
 tpl_configfile=config.conf.tpl
 
-includes=land.map landusage.map borders.map highways.map places.map \
+includes=land.map landusage.map borders.map highways.map places.map trees.map \
 		 generated/$(STYLE)style.msinc \
 		 generated/$(STYLE)level0.msinc generated/$(STYLE)level1.msinc generated/$(STYLE)level2.msinc generated/$(STYLE)level3.msinc \
 		 generated/$(STYLE)level4.msinc generated/$(STYLE)level5.msinc generated/$(STYLE)level6.msinc generated/$(STYLE)level7.msinc \
@@ -50,34 +50,34 @@ generated/$(STYLE)style.msinc: generate_style.py
 	python3 generate_style.py -s $(STYLE) -g > $@
 
 generated/$(STYLE)level0.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 0 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 0 > $@
 
 generated/$(STYLE)level1.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 1 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 1 > $@
 
 generated/$(STYLE)level2.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 2 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 2 > $@
 
 generated/$(STYLE)level3.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 3 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 3 > $@
 
 generated/$(STYLE)level4.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 4 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 4 > $@
 
 generated/$(STYLE)level5.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 5 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 5 > $@
 
 generated/$(STYLE)level6.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 6 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 6 > $@
 
 generated/$(STYLE)level7.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 7 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 7 > $@
 
 generated/$(STYLE)level8.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 8 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 8 > $@
 
 generated/$(STYLE)level9.msinc: generate_style.py
-	python3 generate_style.py  -s $(STYLE) -l 9 > $@ 
+	python3 generate_style.py  -s $(STYLE) -l 9 > $@
 
 generated/$(STYLE)level10.msinc: generate_style.py
 	python3 generate_style.py  -s $(STYLE) -l 10 > $@
