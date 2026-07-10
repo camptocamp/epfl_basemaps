@@ -183,17 +183,22 @@ style = {
       6:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen0)\
             as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'residential\')) as foo using unique osm_id using srid=OSM_SRID"',
+      where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'residential\',\
+      \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\'parking\',\'farmland\',\'farmyard\')) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
       where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'pier\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-      12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
+      \'pitch\',\'pier\',\
+      \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
+      \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
       where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
       \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
       \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'pier\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
+      \'pitch\',\'pier\',\
+      \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
+      \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
    },
    'landusage_opacity': 100,
    'display_industrial': 1,
@@ -290,6 +295,102 @@ style = {
    'transport_lbl_clr': '0 0 0',
    'transport_lbl_ol_clr': "255 255 255",
    'transport_lbl_ol_width': 2,
+
+   'display_grass': 0,
+   'grass_clr': '"#cdebb0"',
+   'grass_ol_clr': '"#cdebb0"',
+   'grass_ol_width': 0,
+   'display_grass_lbl' : {0:0, 15:1},
+   'display_grass_lbl_ol': 1,
+   'grass_font': "sc",
+   'grass_lbl_size': 8,
+   'grass_lbl_clr': '0 0 0',
+   'grass_lbl_ol_clr': "255 255 255",
+   'grass_lbl_ol_width': 2,
+
+   'display_parking': 1,
+   'parking_clr': '"#eeeeee"',
+   'parking_ol_clr': '"#eeeeee"',
+   'parking_ol_width': 0,
+   'display_parking_lbl' : {0:0, 15:1},
+   'display_parking_lbl_ol': 1,
+   'parking_font': "sc",
+   'parking_lbl_size': 8,
+   'parking_lbl_clr': '0 0 0',
+   'parking_lbl_ol_clr': "255 255 255",
+   'parking_lbl_ol_width': 2,
+
+   'display_commercial': 1,
+   'commercial_clr': '"#f2dad9"',
+   'commercial_ol_clr': '"#f2dad9"',
+   'commercial_ol_width': 0,
+   'display_commercial_lbl' : {0:0, 15:1},
+   'display_commercial_lbl_ol': 1,
+   'commercial_font': "sc",
+   'commercial_lbl_size': 8,
+   'commercial_lbl_clr': '0 0 0',
+   'commercial_lbl_ol_clr': "255 255 255",
+   'commercial_lbl_ol_width': 2,
+
+   'display_farmland': 0,
+   'farmland_clr': '"#eef0d5"',
+   'farmland_ol_clr': '"#eef0d5"',
+   'farmland_ol_width': 0,
+   'display_farmland_lbl' : {0:0, 15:1},
+   'display_farmland_lbl_ol': 1,
+   'farmland_font': "sc",
+   'farmland_lbl_size': 8,
+   'farmland_lbl_clr': '0 0 0',
+   'farmland_lbl_ol_clr': "255 255 255",
+   'farmland_lbl_ol_width': 2,
+
+   'display_retail': 0,
+   'retail_clr': '"#ffd6d1"',
+   'retail_ol_clr': '"#ffd6d1"',
+   'retail_ol_width': 0,
+   'display_retail_lbl' : {0:0, 15:1},
+   'display_retail_lbl_ol': 1,
+   'retail_font': "sc",
+   'retail_lbl_size': 8,
+   'retail_lbl_clr': '0 0 0',
+   'retail_lbl_ol_clr': "255 255 255",
+   'retail_lbl_ol_width': 2,
+
+   'display_scrub': 0,
+   'scrub_clr': '"#c8d7ab"',
+   'scrub_ol_clr': '"#c8d7ab"',
+   'scrub_ol_width': 0,
+   'display_scrub_lbl' : {0:0, 15:1},
+   'display_scrub_lbl_ol': 1,
+   'scrub_font': "sc",
+   'scrub_lbl_size': 8,
+   'scrub_lbl_clr': '0 0 0',
+   'scrub_lbl_ol_clr': "255 255 255",
+   'scrub_lbl_ol_width': 2,
+
+   'display_sand': 0,
+   'sand_clr': '"#f5e9c6"',
+   'sand_ol_clr': '"#f5e9c6"',
+   'sand_ol_width': 0,
+   'display_sand_lbl' : {0:0, 15:1},
+   'display_sand_lbl_ol': 1,
+   'sand_font': "sc",
+   'sand_lbl_size': 8,
+   'sand_lbl_clr': '0 0 0',
+   'sand_lbl_ol_clr': "255 255 255",
+   'sand_lbl_ol_width': 2,
+
+   'display_wetland': 0,
+   'wetland_clr': '"#d6d99f"',
+   'wetland_ol_clr': '"#d6d99f"',
+   'wetland_ol_width': 0,
+   'display_wetland_lbl' : {0:0, 15:1},
+   'display_wetland_lbl_ol': 1,
+   'wetland_font': "sc",
+   'wetland_lbl_size': 8,
+   'wetland_lbl_clr': '0 0 0',
+   'wetland_lbl_ol_clr': "255 255 255",
+   'wetland_lbl_ol_width': 2,
 
    ###### highways #######
 
@@ -561,6 +662,22 @@ style = {
    'other_ol_width': 1,
    'other_ol_clr': "0 0 0",
 
+   'service_data': '"geometry from (select geometry, osm_id, service from OSM_SCHEMA.OSM_PREFIX_roads where class=\'roads\' and type=\'service\') as foo using unique osm_id using srid=OSM_SRID"',
+   'display_service_overlay': {0:0, 14:1},
+   'service_overlay_opacity': 100,
+   'service_clr': '"#ffffff"',
+   'service_width': {0:0, 14:2, 15:2.5, 16:3.5, 17:7, 18:8.5},
+   'parking_aisle_clr': '"#ffffff"',
+   'parking_aisle_width': {0:0, 15:2, 16:2, 17:3.5, 18:4.75},
+   'alley_clr': '"#ffffff"',
+   'alley_width': {0:0, 15:2, 16:2, 17:3.5, 18:4.75},
+   'driveway_clr': '"#ffffff"',
+   'driveway_width': {0:0, 16:2, 17:3.5, 18:4.75},
+   'drive_through_clr': '"#ffffff"',
+   'drive_through_width': {0:0, 16:2, 17:3.5, 18:4.75},
+   'other_service_clr': '"#ffffff"',
+   'other_service_width': {0:0, 17:3.5, 18:4.75},
+
    'display_pedestrian': {
       0:0,
       12:1
@@ -695,9 +812,56 @@ style = {
    'railway_pattern': '2 2',
    'railway_tunnel_opacity': 40,
    'railways_data': {
-      0:'"geometry from (select geometry, osm_id, tunnel from OSM_SCHEMA.OSM_PREFIX_railways_gen0 where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"',
-      6:'"geometry from (select geometry, osm_id, tunnel from OSM_SCHEMA.OSM_PREFIX_railways_gen1 where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"',
-      12:'"geometry from (select geometry, osm_id, tunnel from OSM_SCHEMA.OSM_PREFIX_railways where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"'
+      0:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways_gen0 where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"',
+      6:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways_gen1 where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"',
+      12:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways where type=\'rail\') as foo using unique osm_id using srid=OSM_SRID"'
+   },
+
+   ###### subway ########
+   'display_subway': {
+      0:0,
+      8:1
+   },
+   'subway_opacity': 100,
+   'subway_clr': '"#444444"',
+   'subway_width': {
+      0:0.5,
+      10:1
+   },
+   'subway_ol_clr': '"#444444"',
+   'subway_ol_width': 0,
+   'subway_pattern': 0,
+   'subway_tunnel_opacity': 40,
+   'subway_data': {
+      0:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways_gen0 where type in (\'subway\',\'light_rail\',\'tram\')) as foo using unique osm_id using srid=OSM_SRID"',
+      6:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways_gen1 where type in (\'subway\',\'light_rail\',\'tram\')) as foo using unique osm_id using srid=OSM_SRID"',
+      12:'"geometry from (select geometry, osm_id, tunnel, type from OSM_SCHEMA.OSM_PREFIX_railways where type in (\'subway\',\'light_rail\',\'tram\')) as foo using unique osm_id using srid=OSM_SRID"'
+   },
+
+   ###### trees ########
+   'display_trees': {
+      0:0,
+      16:1
+   },
+   'tree_data': {
+      0:'"geometry from (select geometry, osm_id from OSM_SCHEMA.OSM_PREFIX_trees) as foo using unique osm_id using srid=OSM_SRID"'
+   },
+   'tree_clr': '"#90cb7c"',
+   'tree_size': {
+      0:3,
+      16:3,
+      17:4,
+      18:5
+   },
+   'tree_trunk_clr': '"#b27f36"',
+   'display_tree_trunk': {
+       0:0,
+       17:1
+   },
+   'tree_trunk_size': {
+      0:0,
+      17:1,
+      18:2
    },
 
 
@@ -1312,6 +1476,250 @@ namedstyles = {
       'pier_ol_clr': '0 0 0',
       'footway_clr': '"#7f7f7f"'
    },
+   # Almost same look as OSM: https://github.com/openstreetmap-carto/openstreetmap-carto/tree/master
+   'osm':{
+      'land_clr': '"#f2efe9"',
+      'ocean_clr': '"#aad3df"',
+      'waterarea_clr': '"#aad3df"',
+      'river_clr': '"#aad3df"',
+      'stream_clr': '"#aad3df"',
+      'canal_clr': '"#aad3df"',
+      'forest_clr': '"#add19e"',
+      'park_clr': '"#c8facc"',
+      'residential_clr': '"#e0dfdf"',
+      'industrial_clr': '"#ebdbe8"',
+      'hospital_clr': '"#ffffe5"',
+      'education_clr': '"#ffffe5"',
+      'sports_clr': '"#88e0be"',
+      'cemetery_clr': '"#aacbaf"',
+      'building_clr': '"#d9d0c9"',
+      'display_buildings': {
+         0:0,
+         14:1
+      },
+      'building_ol_width': {
+         0:0,
+         15:0.75
+      },
+      'pedestrian_clr': '"#dddde8"',
+      'railway_clr': '"#888888"',
+
+      'farmland_clr': '"#eef0d5"',
+      'grass_clr': '"#cdebb0"',
+      'commercial_clr': '"#f2dad9"',
+      'retail_clr': '"#ffd6d1"',
+      'pitch_clr': '"#88e0be"',
+      'sand_clr': '"#f5e9c6"',
+      'scrub_clr': '"#c8d7ab"',
+      'wetland_clr': '"#cdebb0"',
+      'display_grass': 1,
+      'display_parking': 1,
+      'display_commercial': 1,
+      'display_farmland': 1,
+      'display_retail': 1,
+      'display_scrub': 1,
+      'display_sand': 1,
+      'display_wetland': 1,
+
+      'motorway_clr': '"#e892a2"',
+      'trunk_clr': '"#f9b29c"',
+      'primary_clr': '252 214 164',
+      'secondary_clr': '"#f7fabf"',
+      'tertiary_clr': '"#f7fabf"',
+      'other_clr': '"#ffffff"',
+
+      'motorway_ol_clr': '"#dc2a67"',
+      'trunk_ol_clr': '"#c84e2f"',
+      'primary_ol_clr': '"#a06b00"',
+      'secondary_ol_clr': '"#707d05"',
+      'tertiary_ol_clr': '"#707d05"',
+      'other_ol_clr': '"#bbbbbb"',
+      'pedestrian_ol_clr': '"#cccdc8"',
+      'pier_ol_clr': '193 181 157',
+
+      'motorway_width': {
+         0:0,
+         5:0.5,
+         6:0.4,
+         7:0.8,
+         8:1,
+         9:1.4,
+         10:1.9,
+         11:2.0,
+         12:3.5,
+         13:6,
+         14:6,
+         15:10,
+         16:10,
+         17:18,
+         18:21
+      },
+      'trunk_width': {
+         0:0,
+         5:0.5,
+         6:0.4,
+         7:0.6,
+         8:1,
+         9:1.4,
+         10:1.9,
+         11:1.9,
+         12:3.5,
+         13:6,
+         14:6,
+         15:10,
+         16:10,
+         17:18,
+         18:21
+      },
+      'primary_width': {
+         0:0,
+         8:1,
+         9:1.4,
+         10:1.8,
+         11:1.8,
+         12:3.5,
+         13:5,
+         14:5,
+         15:10,
+         16:10,
+         17:18,
+         18:21
+      },
+      'secondary_width': {
+         0:0,
+         9:1,
+         10:1.1,
+         11:1.1,
+         12:3.5,
+         13:5,
+         14:5,
+         15:9,
+         16:10,
+         17:18,
+         18:21
+      },
+      'tertiary_width': {
+         0:0,
+         10:0.7,
+         11:0.7,
+         12:2.5,
+         13:4,
+         14:5,
+         15:9,
+         16:10,
+         17:18,
+         18:21
+      },
+      'other_width': {
+         0:0,
+         12:0.5,
+         13:2.5,
+         14:3,
+         15:5,
+         16:6,
+         17:12,
+         18:13
+      },
+      'pedestrian_width': {
+         0:0,
+         14:3,
+         15:5,
+         16:6,
+         17:12,
+         18:13
+      },
+      'track_width': {
+         0:0,
+         13:0.5,
+         15:1.5
+      },
+      'cycleway_width': {
+         0:0,
+         13:0.7,
+         15:0.9,
+         16:0.9,
+         18:1
+      },
+      'footway_width': {
+         0:0,
+         14:0.7,
+         15:1,
+         16:1.3,
+         18:1.3
+      },
+      'pier_width': {
+         0:0,
+         15:4
+      },
+
+      'display_other_roads': {
+        0:0,
+        13:1
+      },
+      'display_pedestrian': {
+         0:0,
+         14:1
+      },
+      'display_tracks': {
+         0:0,
+         13:1
+      },
+      'display_cycleways': {
+         0:0,
+         13:1
+      },
+      'display_footways': {
+         0:0,
+         14:1
+      },
+      'display_railways': {
+         0:0,
+         13:1
+      },
+      'display_subway': {
+         0:0,
+         14:1
+      },
+      'display_aeroways': {
+         0:0,
+         12:1
+      },
+      'display_transport_areas': {
+         0:0,
+         14:1
+      },
+
+      'cycleway_clr': '"#6666f8"',
+      'cycleway_pattern': '1 4',
+      'cycleway_ol_clr': '"#ffffff"',
+
+      'footway_clr': '"#fb998c"',
+      'display_footway_outline': 1,
+      'footway_pattern': '2 2',
+      'footway_ol_width': 1,
+      'footway_ol_clr': '"#ffffff"',
+
+      'display_trees': {
+         0:0,
+         16:1
+      },
+      'tree_clr': '"#9ab88e"',
+      'tree_size': {
+         0:0,
+         16:2.5,
+         17:5,
+         18:10,
+      },
+      'display_tree_trunk': {
+         0:0,
+         18:1
+      },
+      'tree_trunk_clr': '"#6b8d5e"',
+      'tree_trunk_size': {
+         0:0,
+         18:2,
+      },
+   },
    'bing':{
       'motorway_clr': '"#BAC3A8"',
       'trunk_clr': '"#F2935D"',
@@ -1371,6 +1779,9 @@ namedstyles = {
       },
       'railways_data': {
          0:'"way from (select way, osm_id, tunnel, railway as type from OSM_SCHEMA.OSM_PREFIX_line where railway=\'rail\') as foo using unique osm_id using srid=OSM_SRID"'
+      },
+      'subway_data': {
+         0:'"way from (select way, osm_id, tunnel, railway as type from OSM_SCHEMA.OSM_PREFIX_line where railway in (\'subway\',\'light_rail\',\'tram\')) as foo using unique osm_id using srid=OSM_SRID"'
       },
       'landusage_data': {
          0:'"way from (select way, osm_id, name, type from (select way, st_area(way) as area, osm_id, (case when landuse is not null then landuse else (case when \\\"natural\\\" is not null then \\\"natural\\\" else (case when leisure is not null then leisure else amenity end) end) end) as type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_polygon) as osm2 \
@@ -1551,6 +1962,7 @@ style_aliases = {
    # same style as above, but using data coming from an osm2pgsql schema rather than imposm
    "googleosm2pgsql":"default,outlined,google,osm2pgsql",
    "bing":"default,outlined,bing",
+   "osm":"default,outlined,osm",
    "michelin":"default,outlined,centerlined,michelin",
 
    "bw":"default,outlined,centerlined,bw"

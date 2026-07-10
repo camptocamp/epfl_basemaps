@@ -892,6 +892,26 @@
                     "swimming_pool"
                 ]
             }
+        },
+        "trees": {
+            "columns": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                }
+            ],
+            "type": "point",
+            "mapping": {
+                "natural": [
+                    "tree"
+                ]
+            }
         }
     }
 }

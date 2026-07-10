@@ -74,14 +74,68 @@ LAYER
 #endif
    END
 #endif
+#if _display_parking==1
+    CLASS
+      EXPRESSION 'parking'
+      STYLE
+        COLOR _parking_clr
+        OUTLINECOLOR _parking_ol_clr
+        OUTLINEWIDTH _parking_ol_width
+      END
+#if _display_parking_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _parking_font
+        SIZE _parking_lbl_size
+        COLOR _parking_lbl_clr
+#if _display_parking_lbl_ol==1
+        OUTLINECOLOR _parking_lbl_ol_clr
+        OUTLINEWIDTH _parking_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_commercial==1
+    CLASS
+      EXPRESSION 'commercial'
+      STYLE
+        COLOR _commercial_clr
+        OUTLINECOLOR _commercial_ol_clr
+        OUTLINEWIDTH _commercial_ol_width
+      END
+#if _display_commercial_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _commercial_font
+        SIZE _commercial_lbl_size
+        COLOR _commercial_lbl_clr
+#if _display_commercial_lbl_ol==1
+        OUTLINECOLOR _commercial_lbl_ol_clr
+        OUTLINEWIDTH _commercial_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
 #if _display_industrial==1
-   CLASS
-     EXPRESSION {industrial,commercial,parking}
-     STYLE
-       COLOR _industrial_clr
-       OUTLINECOLOR _industrial_ol_clr
-       OUTLINEWIDTH _industrial_ol_width
-     END
+    CLASS
+      EXPRESSION 'industrial'
+      STYLE
+        COLOR _industrial_clr
+        OUTLINECOLOR _industrial_ol_clr
+        OUTLINEWIDTH _industrial_ol_width
+      END
 #if _display_industrial_lbl==1
      LABEL
        ENCODING "utf-8"
@@ -155,6 +209,168 @@ LAYER
             ALIGN CENTER
             MINFEATURESIZE AUTO
         END
+#endif
+    END
+#endif
+#if _display_grass==1
+    CLASS
+      EXPRESSION {grassland,meadow,grass,village_green,garden}
+      STYLE
+        COLOR _grass_clr
+        OUTLINECOLOR _grass_ol_clr
+        OUTLINEWIDTH _grass_ol_width
+      END
+#if _display_grass_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _grass_font
+        SIZE _grass_lbl_size
+        COLOR _grass_lbl_clr
+#if _display_grass_lbl_ol==1
+        OUTLINECOLOR _grass_lbl_ol_clr
+        OUTLINEWIDTH _grass_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_farmland==1
+    CLASS
+      EXPRESSION {farmland,farmyard}
+      STYLE
+        COLOR _farmland_clr
+        OUTLINECOLOR _farmland_ol_clr
+        OUTLINEWIDTH _farmland_ol_width
+      END
+#if _display_farmland_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _farmland_font
+        SIZE _farmland_lbl_size
+        COLOR _farmland_lbl_clr
+#if _display_farmland_lbl_ol==1
+        OUTLINECOLOR _farmland_lbl_ol_clr
+        OUTLINEWIDTH _farmland_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_scrub==1
+    CLASS
+      EXPRESSION {scrub,heath}
+      STYLE
+        COLOR _scrub_clr
+        OUTLINECOLOR _scrub_ol_clr
+        OUTLINEWIDTH _scrub_ol_width
+      END
+#if _display_scrub_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _scrub_font
+        SIZE _scrub_lbl_size
+        COLOR _scrub_lbl_clr
+#if _display_scrub_lbl_ol==1
+        OUTLINECOLOR _scrub_lbl_ol_clr
+        OUTLINEWIDTH _scrub_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_sand==1
+    CLASS
+      EXPRESSION {sand,bare_ground}
+      STYLE
+        COLOR _sand_clr
+        OUTLINECOLOR _sand_ol_clr
+        OUTLINEWIDTH _sand_ol_width
+      END
+#if _display_sand_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _sand_font
+        SIZE _sand_lbl_size
+        COLOR _sand_lbl_clr
+#if _display_sand_lbl_ol==1
+        OUTLINECOLOR _sand_lbl_ol_clr
+        OUTLINEWIDTH _sand_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_wetland==1
+    CLASS
+      EXPRESSION {wetland}
+      STYLE
+        COLOR _wetland_clr
+        OUTLINECOLOR _wetland_ol_clr
+        OUTLINEWIDTH _wetland_ol_width
+      END
+#if _display_wetland_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _wetland_font
+        SIZE _wetland_lbl_size
+        COLOR _wetland_lbl_clr
+#if _display_wetland_lbl_ol==1
+        OUTLINECOLOR _wetland_lbl_ol_clr
+        OUTLINEWIDTH _wetland_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
+#endif
+    END
+#endif
+#if _display_retail==1
+    CLASS
+      EXPRESSION 'retail'
+      STYLE
+        COLOR _retail_clr
+        OUTLINECOLOR _retail_ol_clr
+        OUTLINEWIDTH _retail_ol_width
+      END
+#if _display_retail_lbl==1
+      LABEL
+        TYPE TRUETYPE
+        PARTIALS FALSE
+        FONT _retail_font
+        SIZE _retail_lbl_size
+        COLOR _retail_lbl_clr
+#if _display_retail_lbl_ol==1
+        OUTLINECOLOR _retail_lbl_ol_clr
+        OUTLINEWIDTH _retail_lbl_ol_width
+#endif
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
+        MINFEATURESIZE AUTO
+      END
 #endif
     END
 #endif

@@ -42,6 +42,54 @@ LAYER
 END
 #endif
 
+#if _display_subway == 1
+LAYER
+    GROUP "default"
+    STATUS ON
+    CONNECTIONTYPE POSTGIS
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
+    CONNECTION "OSM_DB_CONNECTION"
+#if OSM_FORCE_POSTGIS_EXTENT == 1
+    EXTENT OSM_EXTENT
+#endif
+    MINSCALEDENOM _minscale
+    MAXSCALEDENOM _maxscale
+    TYPE LINE
+    NAME layername(subway,_layer_suffix)
+    COMPOSITE
+     OPACITY _subway_opacity
+    END # COMPOSITE
+    DATA _subway_data
+    CLASSITEM "tunnel"
+    CLASS
+      EXPRESSION "0"
+        STYLE
+         WIDTH _subway_width
+         COLOR _subway_clr
+         OUTLINEWIDTH _subway_ol_width
+         OUTLINECOLOR _subway_ol_clr
+#if _subway_pattern != 0
+         PATTERN _subway_pattern END
+#endif
+         LINECAP BUTT
+        END
+    END
+    CLASS
+        STYLE
+         WIDTH _subway_width
+         COLOR _subway_clr
+#if _subway_pattern != 0
+         PATTERN _subway_pattern END
+#endif
+         OPACITY _subway_tunnel_opacity
+         LINECAP BUTT
+        END
+    END
+END
+#endif
+
 #if _display_highways == 1
 
 LAYER
@@ -930,6 +978,60 @@ LAYER
 #endif
 ##(display_roads_tunnels)
 END
+
+
+#if _display_service_overlay == 1
+LAYER
+    GROUP "default"
+    STATUS ON
+    MINSCALEDENOM _minscale
+    MAXSCALEDENOM _maxscale
+    TYPE LINE
+    NAME layername(service_overlay,_layer_suffix)
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
+    CONNECTIONTYPE postgis
+    CONNECTION "OSM_DB_CONNECTION"
+#if OSM_FORCE_POSTGIS_EXTENT == 1
+    EXTENT OSM_EXTENT
+#endif
+    COMPOSITE
+      OPACITY _service_overlay_opacity
+    END # COMPOSITE
+    DATA _service_data
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    CLASSITEM "service"
+    CLASS
+        EXPRESSION ""
+        STYLE
+            WIDTH _service_width
+            COLOR _service_clr
+        END
+    END
+    CLASS
+        EXPRESSION "parking_aisle"
+        STYLE
+            WIDTH _parking_aisle_width
+            COLOR _parking_aisle_clr
+        END
+    END
+    CLASS
+        EXPRESSION "alley"
+        STYLE
+            WIDTH _alley_width
+            COLOR _alley_clr
+        END
+    END
+    CLASS
+        EXPRESSION {driveway,drive_through}
+        STYLE
+            WIDTH _driveway_width
+            COLOR _driveway_clr
+        END
+    END
+END
+#endif
 
 
 #if _display_aeroways == 1
