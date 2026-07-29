@@ -21,7 +21,9 @@ layer_suffixes = {
    15:15,
    16:16,
    17:17,
-   18:18
+   18:18,
+   19:19,
+   20:20
 }
 
 maxscales = {
@@ -43,7 +45,9 @@ maxscales = {
    15:20313,
    16:10156,
    17:5078,
-   18:2539
+   18:2539,
+   19:1270,
+   20:635
 }
 minscales = {
    0:332808204,
@@ -64,7 +68,9 @@ minscales = {
    15:10156,
    16:5078,
    17:2539,
-   18:0
+   18:1270,
+   19:635,
+   20:0
 }
 
 style = {
@@ -873,15 +879,16 @@ style = {
    },
    'tree_trunk_clr': '"#b27f36"',
    'display_tree_trunk': {
-       0:0,
-       17:1
+      0:0,
+      17:1
    },
    'tree_trunk_size': {
       0:0,
       17:1,
       18:2
    },
-
+   'tree_opacity': 100,
+   'tree_trunk_opacity': 100,
 
    ##### borders ######
    'border_data': '"data/boundaries.shp"',
@@ -1767,6 +1774,8 @@ namedstyles = {
          16:2.5,
          17:5,
          18:10,
+         19:15,
+         20:30
       },
       'display_tree_trunk': {
          0:0,
@@ -1776,7 +1785,11 @@ namedstyles = {
       'tree_trunk_size': {
          0:0,
          18:2,
+         19:3,
+         20:6
       },
+      'tree_opacity': 60,
+      'tree_trunk_opacity': 40,
    },
    'bing':{
       'motorway_clr': '"#BAC3A8"',
@@ -2055,7 +2068,7 @@ if args.full:
          print("#define _{0}0 {1}".format(k, v))
 
 
-   for i in range(1, 19):
+   for i in range(1, 21):
       print('')
       print("###### level {0} ######".format(i))
       for k, v in style.items():

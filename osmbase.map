@@ -221,6 +221,24 @@ END
 #include "places.map"
 #include "trees.map"
 
+#include LEVELPASTER(THEME,19)
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+#include "trees.map"
+
+#include LEVELPASTER(THEME,20)
+#include "land.map"
+#include "landusage.map"
+#include "highways.map"
+#include "buildings.map"
+#include "borders.map"
+#include "places.map"
+#include "trees.map"
+
 SYMBOL
  name "citycircle"
  type ellipse
