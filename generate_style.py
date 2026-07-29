@@ -664,19 +664,37 @@ style = {
 
    'service_data': '"geometry from (select geometry, osm_id, coalesce(service, \'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where class=\'highway\' and type=\'service\') as foo using unique osm_id using srid=OSM_SRID"',
    'display_service_overlay': {0:0, 14:1},
+
    'service_overlay_opacity': 100,
    'service_clr': '"#ffffff"',
    'service_width': {0:0, 14:0.9, 16:2.3, 17:5.4, 18:6.9},
+   'display_service_outline': {0:0, 14:1},
+   'service_ol_clr': "0 0 0",
+   'service_ol_width': 1,
+
    'parking_aisle_clr': '"#ffffff"',
    'parking_aisle_width': {0:0, 16:0.8, 17:1.9, 18:3.15},
+   'display_parking_aisle_outline': {0:0, 16:1},
+   'parking_aisle_ol_clr': "0 0 0",
+   'parking_aisle_ol_width': 1,
+
    'alley_clr': '"#ffffff"',
    'alley_width': {0:0, 16:0.8, 17:1.9, 18:3.15},
+   'display_alley_outline': {0:0, 16:1},
+   'alley_ol_clr': "0 0 0",
+   'alley_ol_width': 1,
+
    'driveway_clr': '"#ffffff"',
    'driveway_width': {0:0, 16:0.8, 17:1.9, 18:3.15},
-   'drive_through_clr': '"#ffffff"',
-   'drive_through_width': {0:0, 16:0.8, 17:1.9, 18:3.15},
+   'display_driveway_outline': {0:0, 16:1},
+   'driveway_ol_clr': "0 0 0",
+   'driveway_ol_width': 1,
+
    'other_service_clr': '"#ffffff"',
    'other_service_width': {0:0, 17:1.9, 18:3.15},
+   'display_other_service_outline': {0:0, 17:1},
+   'other_service_ol_clr': "0 0 0",
+   'other_service_ol_width': 1,
 
    'display_pedestrian': {
       0:0,
@@ -1441,8 +1459,28 @@ namedstyles = {
          13:1
       },
       'display_other_outline': {
-         0:0,
-         14:1
+          0:0,
+          14:1
+      },
+      'display_service_outline': {
+          0:0,
+          14:1
+      },
+      'display_parking_aisle_outline': {
+          0:0,
+          14:1
+      },
+      'display_alley_outline': {
+          0:0,
+          14:1
+      },
+      'display_driveway_outline': {
+          0:0,
+          14:1
+      },
+      'display_other_service_outline': {
+          0:0,
+          14:1
       },
 
       'motorway_ol_width': 0.5,
@@ -1452,6 +1490,11 @@ namedstyles = {
       'tertiary_ol_width': 0.2,
       'other_ol_width': 0.2,
       'pier_ol_width': 0.2,
+      'service_ol_width': 0.2,
+      'parking_aisle_ol_width': 0.2,
+      'alley_ol_width': 0.2,
+      'driveway_ol_width': 0.2,
+      'other_service_ol_width': 0.2,
 
       'pedestrian_clr': '"#fafaf5"',
       'forest_clr': '188 220 180',
@@ -1475,6 +1518,11 @@ namedstyles = {
       'other_ol_clr': '0 0 0',
       'pedestrian_ol_clr': '0 0 0',
       'pier_ol_clr': '0 0 0',
+      'service_ol_clr': '0 0 0',
+      'parking_aisle_ol_clr': '0 0 0',
+      'alley_ol_clr': '0 0 0',
+      'driveway_ol_clr': '0 0 0',
+      'other_service_ol_clr': '0 0 0',
       'footway_clr': '"#7f7f7f"'
    },
    # Almost same look as OSM: https://github.com/openstreetmap-carto/openstreetmap-carto/tree/master
@@ -1539,6 +1587,11 @@ namedstyles = {
       'other_ol_clr': '"#bbbbbb"',
       'pedestrian_ol_clr': '"#cccdc8"',
       'pier_ol_clr': '193 181 157',
+      'service_ol_clr': '"#bbbbbb"',
+      'parking_aisle_ol_clr': '"#bbbbbb"',
+      'alley_ol_clr': '"#bbbbbb"',
+      'driveway_ol_clr': '"#bbbbbb"',
+      'other_service_ol_clr': '"#bbbbbb"',
 
       'motorway_width': {
          0:0,

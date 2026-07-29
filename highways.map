@@ -1007,6 +1007,10 @@ LAYER
         STYLE
             WIDTH _service_width
             COLOR _service_clr
+#if _display_service_outline
+            OUTLINEWIDTH _service_ol_width
+            OUTLINECOLOR _service_ol_clr
+#endif
         END
     END
     CLASS
@@ -1014,6 +1018,10 @@ LAYER
         STYLE
             WIDTH _parking_aisle_width
             COLOR _parking_aisle_clr
+#if _display_parking_aisle_outline
+            OUTLINEWIDTH _parking_aisle_ol_width
+            OUTLINECOLOR _parking_aisle_ol_clr
+#endif
         END
     END
     CLASS
@@ -1021,6 +1029,10 @@ LAYER
         STYLE
             WIDTH _alley_width
             COLOR _alley_clr
+#if _display_alley_outline
+            OUTLINEWIDTH _alley_ol_width
+            OUTLINECOLOR _alley_ol_clr
+#endif
         END
     END
     CLASS
@@ -1028,12 +1040,20 @@ LAYER
         STYLE
             WIDTH _driveway_width
             COLOR _driveway_clr
+#if _display_driveway_outline
+            OUTLINEWIDTH _driveway_ol_width
+            OUTLINECOLOR _driveway_ol_clr
+#endif
         END
     END
     CLASS
         STYLE
             WIDTH _other_service_width
             COLOR _other_service_clr
+#if _display_other_service_outline
+            OUTLINEWIDTH _other_service_ol_width
+            OUTLINECOLOR _other_service_ol_clr
+#endif
         END
     END
 END
