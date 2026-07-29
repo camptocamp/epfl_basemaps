@@ -1571,6 +1571,8 @@ namedstyles = {
       'display_scrub': 1,
       'display_sand': 1,
       'display_wetland': 1,
+      'parking_ol_clr': '"#8e8e8e"',
+      'parking_ol_width': 0.3,
 
       'motorway_clr': '"#e892a2"',
       'trunk_clr': '"#f9b29c"',
@@ -2002,6 +2004,10 @@ namedstyles = {
       'pier_ol_clr': '0 0 0',
       'footway_clr': '"#000000"'
    },
+   'epfl': {
+      'service_clr': '"#f7efb7"',
+      'service_ol_clr': '"#f2e799"',
+   },
 }
 
 # these are the preconfigured styles that can be called when creating the final mapfile,
@@ -2021,7 +2027,9 @@ style_aliases = {
    "osm":"default,outlined,osm",
    "michelin":"default,outlined,centerlined,michelin",
 
-   "bw":"default,outlined,centerlined,bw"
+   "bw":"default,outlined,centerlined,bw",
+
+   "epfl":"default,outlined,osm,epfl"
 }
 
 
