@@ -1587,7 +1587,7 @@ namedstyles = {
       'secondary_ol_clr': '"#707d05"',
       'tertiary_ol_clr': '"#bbbbbb"',
       'other_ol_clr': '"#bbbbbb"',
-      'pedestrian_ol_clr': '"#cccdc8"',
+      'pedestrian_ol_clr': '"#808080"',
       'pier_ol_clr': '193 181 157',
       'service_ol_clr': '"#bbbbbb"',
       'parking_aisle_ol_clr': '"#bbbbbb"',

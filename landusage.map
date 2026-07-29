@@ -378,6 +378,8 @@ LAYER
       EXPRESSION 'pedestrian'
       STYLE
          COLOR _pedestrian_clr
+         OUTLINECOLOR _pedestrian_ol_clr
+         OUTLINEWIDTH _pedestrian_ol_width
       END
 #if _display_pedestrian_lbl==1
       LABEL
