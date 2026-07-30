@@ -1466,28 +1466,28 @@ namedstyles = {
          13:1
       },
       'display_other_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
       'display_service_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
       'display_parking_aisle_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
       'display_alley_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
       'display_driveway_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
       'display_other_service_outline': {
-          0:0,
-          14:1
+         0:0,
+         14:1
       },
 
       'motorway_ol_width': 0.5,
