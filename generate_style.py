@@ -400,14 +400,14 @@ style = {
 
    ###### highways #######
 
-   'roads_data': {
+'roads_data': {
       0:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen0 where type in (\'trunk\',\'motorway\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       8:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'secondary\',\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 ) as foo using unique osm_id using srid=OSM_SRID"',
       11:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
-      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type||bridge||tunnel as type from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
-   },
+      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+    },
    'roads_opacity': 100,
 
    'tunnel_opacity': 40,
