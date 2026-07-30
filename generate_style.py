@@ -2018,8 +2018,10 @@ namedstyles = {
       'footway_clr': '"#000000"'
    },
    'epfl': {
-      'service_clr': '"#f7efb7"',
-      'service_ol_clr': '"#f2e799"',
+      #'service_clr': '"#f7efb7"',
+      #'service_ol_clr': '"#f2e799"',
+      'parking_clr': '"#eeeeee"',
+      'parking_ol_clr': '"#eeeeee"',
    },
 }
 
