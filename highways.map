@@ -90,6 +90,85 @@ LAYER
 END
 #endif
 
+#if _display_service_overlay == 1
+LAYER
+    GROUP "default"
+    STATUS ON
+    MINSCALEDENOM _minscale
+    MAXSCALEDENOM _maxscale
+    TYPE LINE
+    NAME layername(service_overlay,_layer_suffix)
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
+    CONNECTIONTYPE postgis
+    CONNECTION "OSM_DB_CONNECTION"
+#if OSM_FORCE_POSTGIS_EXTENT == 1
+    EXTENT OSM_EXTENT
+#endif
+    COMPOSITE
+      OPACITY _service_overlay_opacity
+    END # COMPOSITE
+    DATA _service_data
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    CLASSITEM "service"
+    CLASS
+        EXPRESSION "//"
+        STYLE
+            WIDTH _service_width
+            COLOR _service_clr
+#if _display_service_outline
+            OUTLINEWIDTH _service_ol_width
+            OUTLINECOLOR _service_ol_clr
+#endif
+        END
+    END
+    CLASS
+        EXPRESSION "parking_aisle"
+        STYLE
+            WIDTH _parking_aisle_width
+            COLOR _parking_aisle_clr
+#if _display_parking_aisle_outline
+            OUTLINEWIDTH _parking_aisle_ol_width
+            OUTLINECOLOR _parking_aisle_ol_clr
+#endif
+        END
+    END
+    CLASS
+        EXPRESSION "alley"
+        STYLE
+            WIDTH _alley_width
+            COLOR _alley_clr
+#if _display_alley_outline
+            OUTLINEWIDTH _alley_ol_width
+            OUTLINECOLOR _alley_ol_clr
+#endif
+        END
+    END
+    CLASS
+        EXPRESSION {driveway,drive_through}
+        STYLE
+            WIDTH _driveway_width
+            COLOR _driveway_clr
+#if _display_driveway_outline
+            OUTLINEWIDTH _driveway_ol_width
+            OUTLINECOLOR _driveway_ol_clr
+#endif
+        END
+    END
+    CLASS
+        STYLE
+            WIDTH _other_service_width
+            COLOR _other_service_clr
+#if _display_other_service_outline
+            OUTLINEWIDTH _other_service_ol_width
+            OUTLINECOLOR _other_service_ol_clr
+#endif
+        END
+    END
+END
+#endif
+
 #if _display_highways == 1
 
 LAYER
@@ -123,7 +202,7 @@ LAYER
 #if _display_bridges == 1
         EXPRESSION {unclassified00,residential00,road00,living_street00}
 #else
-        EXPRESSION {unclassified,residential,service,road,living_street}
+        EXPRESSION {unclassified,residential,road,living_street}
 #endif
 #if _display_other_outline
         STYLE
@@ -978,86 +1057,6 @@ LAYER
 #endif
 ##(display_roads_tunnels)
 END
-
-
-#if _display_service_overlay == 1
-LAYER
-    GROUP "default"
-    STATUS ON
-    MINSCALEDENOM _minscale
-    MAXSCALEDENOM _maxscale
-    TYPE LINE
-    NAME layername(service_overlay,_layer_suffix)
-    PROJECTION
-        "init=epsg:OSM_SRID"
-    END
-    CONNECTIONTYPE postgis
-    CONNECTION "OSM_DB_CONNECTION"
-#if OSM_FORCE_POSTGIS_EXTENT == 1
-    EXTENT OSM_EXTENT
-#endif
-    COMPOSITE
-      OPACITY _service_overlay_opacity
-    END # COMPOSITE
-    DATA _service_data
-    PROCESSING "CLOSE_CONNECTION=DEFER"
-    CLASSITEM "service"
-    CLASS
-        EXPRESSION "//"
-        STYLE
-            WIDTH _service_width
-            COLOR _service_clr
-#if _display_service_outline
-            OUTLINEWIDTH _service_ol_width
-            OUTLINECOLOR _service_ol_clr
-#endif
-        END
-    END
-    CLASS
-        EXPRESSION "parking_aisle"
-        STYLE
-            WIDTH _parking_aisle_width
-            COLOR _parking_aisle_clr
-#if _display_parking_aisle_outline
-            OUTLINEWIDTH _parking_aisle_ol_width
-            OUTLINECOLOR _parking_aisle_ol_clr
-#endif
-        END
-    END
-    CLASS
-        EXPRESSION "alley"
-        STYLE
-            WIDTH _alley_width
-            COLOR _alley_clr
-#if _display_alley_outline
-            OUTLINEWIDTH _alley_ol_width
-            OUTLINECOLOR _alley_ol_clr
-#endif
-        END
-    END
-    CLASS
-        EXPRESSION {driveway,drive_through}
-        STYLE
-            WIDTH _driveway_width
-            COLOR _driveway_clr
-#if _display_driveway_outline
-            OUTLINEWIDTH _driveway_ol_width
-            OUTLINECOLOR _driveway_ol_clr
-#endif
-        END
-    END
-    CLASS
-        STYLE
-            WIDTH _other_service_width
-            COLOR _other_service_clr
-#if _display_other_service_outline
-            OUTLINEWIDTH _other_service_ol_width
-            OUTLINECOLOR _other_service_ol_clr
-#endif
-        END
-    END
-END
-#endif
 
 
 #if _display_aeroways == 1
