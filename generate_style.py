@@ -1596,11 +1596,11 @@ namedstyles = {
       'other_ol_clr': '"#bbbbbb"',
       'pedestrian_ol_clr': '"#d4d3cb"',
       'pier_ol_clr': '193 181 157',
-      'service_ol_clr': '"#bbbbbb"',
-      'parking_aisle_ol_clr': '"#bbbbbb"',
-      'alley_ol_clr': '"#bbbbbb"',
-      'driveway_ol_clr': '"#bbbbbb"',
-      'other_service_ol_clr': '"#bbbbbb"',
+      'service_ol_clr': '"#e3e2e0"',
+      'parking_aisle_ol_clr': '"#e3e2e0"',
+      'alley_ol_clr': '"#e3e2e0"',
+      'driveway_ol_clr': '"#e3e2e0"',
+      'other_service_ol_clr': '"#e3e2e0"',
 
       'motorway_width': {
          0:0,
