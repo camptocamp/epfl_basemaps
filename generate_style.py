@@ -1585,7 +1585,7 @@ namedstyles = {
       'trunk_clr': '"#f9b29c"',
       'primary_clr': '252 214 164',
       'secondary_clr': '"#f7fabf"',
-      'tertiary_clr': '"#000000"',
+      'tertiary_clr': '"#ffffff"',
       'other_clr': '"#ffffff"',
 
       'motorway_ol_clr': '"#dc2a67"',
