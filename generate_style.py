@@ -671,7 +671,7 @@ style = {
    'other_ol_width': 1,
    'other_ol_clr': "0 0 0",
 
-   'service_data': '"geometry from (select geometry, osm_id, coalesce(service, \'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where class=\'highway\' and type=\'service\') as foo using unique osm_id using srid=OSM_SRID"',
+   'service_data': '"geometry from (select geometry, osm_id, OSM_NAME_COLUMN as name, coalesce(service, \'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where class=\'highway\' and type=\'service\') as foo using unique osm_id using srid=OSM_SRID"',
    'display_service_overlay': {0:0, 14:1},
 
    'service_overlay_opacity': 100,

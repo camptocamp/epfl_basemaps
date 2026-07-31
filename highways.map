@@ -988,6 +988,25 @@ LAYER
             OUTLINECOLOR _service_ol_clr
 #endif
         END
+#if _label_other_roads == 1
+        LABEL
+            TYPE TRUETYPE
+            PARTIALS FALSE
+            FONT _other_font
+            SIZE _other_lbl_size
+            MINDISTANCE 200
+            REPEATDISTANCE 400
+            ANGLE FOLLOW
+            COLOR _other_lbl_clr
+#if _label_outline_other_roads == 1
+            OUTLINECOLOR _other_lbl_ol_clr
+            OUTLINEWIDTH _other_lbl_ol_width
+#endif
+            ENCODING "UTF-8"
+            MINFEATURESIZE AUTO
+            BUFFER 3
+        END
+#endif
     END
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" = "parking_aisle")
@@ -999,6 +1018,25 @@ LAYER
             OUTLINECOLOR _parking_aisle_ol_clr
 #endif
         END
+#if _label_other_roads == 1
+        LABEL
+            TYPE TRUETYPE
+            PARTIALS FALSE
+            FONT _other_font
+            SIZE _other_lbl_size
+            MINDISTANCE 200
+            REPEATDISTANCE 400
+            ANGLE FOLLOW
+            COLOR _other_lbl_clr
+#if _label_outline_other_roads == 1
+            OUTLINECOLOR _other_lbl_ol_clr
+            OUTLINEWIDTH _other_lbl_ol_width
+#endif
+            ENCODING "UTF-8"
+            MINFEATURESIZE AUTO
+            BUFFER 3
+        END
+#endif
     END
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" = "alley")
@@ -1010,6 +1048,25 @@ LAYER
             OUTLINECOLOR _alley_ol_clr
 #endif
         END
+#if _label_other_roads == 1
+        LABEL
+            TYPE TRUETYPE
+            PARTIALS FALSE
+            FONT _other_font
+            SIZE _other_lbl_size
+            MINDISTANCE 200
+            REPEATDISTANCE 400
+            ANGLE FOLLOW
+            COLOR _other_lbl_clr
+#if _label_outline_other_roads == 1
+            OUTLINECOLOR _other_lbl_ol_clr
+            OUTLINEWIDTH _other_lbl_ol_width
+#endif
+            ENCODING "UTF-8"
+            MINFEATURESIZE AUTO
+            BUFFER 3
+        END
+#endif
     END
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" IN "driveway,drive_through")
@@ -1021,6 +1078,25 @@ LAYER
             OUTLINECOLOR _driveway_ol_clr
 #endif
         END
+#if _label_other_roads == 1
+        LABEL
+            TYPE TRUETYPE
+            PARTIALS FALSE
+            FONT _other_font
+            SIZE _other_lbl_size
+            MINDISTANCE 200
+            REPEATDISTANCE 400
+            ANGLE FOLLOW
+            COLOR _other_lbl_clr
+#if _label_outline_other_roads == 1
+            OUTLINECOLOR _other_lbl_ol_clr
+            OUTLINEWIDTH _other_lbl_ol_width
+#endif
+            ENCODING "UTF-8"
+            MINFEATURESIZE AUTO
+            BUFFER 3
+        END
+#endif
     END
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" != "" AND NOT("[service]" IN "parking_aisle,alley,driveway,drive_through"))
@@ -1032,6 +1108,25 @@ LAYER
             OUTLINECOLOR _other_service_ol_clr
 #endif
         END
+#if _label_other_roads == 1
+        LABEL
+            TYPE TRUETYPE
+            PARTIALS FALSE
+            FONT _other_font
+            SIZE _other_lbl_size
+            MINDISTANCE 200
+            REPEATDISTANCE 400
+            ANGLE FOLLOW
+            COLOR _other_lbl_clr
+#if _label_outline_other_roads == 1
+            OUTLINECOLOR _other_lbl_ol_clr
+            OUTLINEWIDTH _other_lbl_ol_width
+#endif
+            ENCODING "UTF-8"
+            MINFEATURESIZE AUTO
+            BUFFER 3
+        END
+#endif
     END
 #endif
 
