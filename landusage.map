@@ -458,6 +458,8 @@ LAYER
       EXPRESSION {sports_center,stadium,pitch}
       STYLE
           COLOR _sports_clr
+          OUTLINECOLOR _sports_ol_clr
+          OUTLINEWIDTH _sports_ol_width
       END
 #if _display_sports_lbl==1
       LABEL

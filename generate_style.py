@@ -263,6 +263,8 @@ style = {
 
    'display_sports': 1,
    'sports_clr': '"#DED1AB"',
+   'sports_ol_clr': "0 0 0",
+   'sports_ol_width': 0,
    'display_sports_lbl' : {0:0, 12:1},
    'display_sports_lbl_ol': 1,
    'sports_font': "sc",
@@ -1547,6 +1549,8 @@ namedstyles = {
       'hospital_clr': '"#ffffe5"',
       'education_clr': '"#ffffe5"',
       'sports_clr': '"#88e0be"',
+      'sports_ol_clr': '"#6bb899"',
+      'sports_ol_width': 0.3,
       'cemetery_clr': '"#aacbaf"',
       'building_clr': '"#d9d0c9"',
       'building_clr_opacity': 100,
@@ -2020,6 +2024,9 @@ namedstyles = {
    'epfl': {
       'parking_clr': '"#f7efb7"',
       'parking_ol_clr': '"#eeeeb4"',
+      'sports_clr': '"#f7efb7"',
+      'sports_ol_clr': '"#eeeeb4"',
+      'sports_ol_width': 0.3,
    },
 }
 
