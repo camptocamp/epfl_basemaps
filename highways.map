@@ -977,18 +977,6 @@ LAYER
 #endif
 ##(display_roads_tunnels)
 
-#if _display_oneway_arrows == 1
-    CLASS
-        EXPRESSION ("[oneway]" = "1")
-        STYLE
-            SYMBOL "oneway_arrow"
-            SIZE _oneway_arrow_size
-            COLOR _oneway_arrow_clr
-            GAP 200
-        END
-    END
-#endif
-
 #if _display_service_overlay == 1
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" = "")
@@ -1143,6 +1131,36 @@ LAYER
 #endif
 
 END
+
+
+#if _display_oneway_arrows == 1
+LAYER
+    GROUP "default"
+    STATUS ON
+    MINSCALEDENOM _minscale
+    MAXSCALEDENOM _maxscale
+    TYPE POINT
+    NAME layername(oneway_arrows,_layer_suffix)
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
+    CONNECTIONTYPE postgis
+    CONNECTION "OSM_DB_CONNECTION"
+#if OSM_FORCE_POSTGIS_EXTENT == 1
+    EXTENT OSM_EXTENT
+#endif
+    DATA _oneway_arrow_data
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    ANGLEITEM "angle"
+    CLASS
+        STYLE
+            SYMBOL "oneway_arrow"
+            SIZE _oneway_arrow_size
+            COLOR _oneway_arrow_clr
+        END
+    END
+END
+#endif
 
 
 #if _display_aeroways == 1

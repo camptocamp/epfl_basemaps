@@ -435,6 +435,7 @@ style = {
    'pedestrian_bridge_width':{0:0.5,14:1},
 
    'display_oneway_arrows': {0:0, 14:1},
+   'oneway_arrow_data': '"geometry from (select row_number() over () as id, osm_id, geom as geometry, angle from (select osm_id, st_lineinterpolatepoint(geometry, 0.25) as geom, case when oneway = 1 then degrees(st_azimuth(st_startpoint(geometry), st_endpoint(geometry))) else degrees(st_azimuth(st_endpoint(geometry), st_startpoint(geometry))) end as angle from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1, -1) and st_length(geometry) > 100 union all select osm_id, st_lineinterpolatepoint(geometry, 0.75) as geom, case when oneway = 1 then degrees(st_azimuth(st_startpoint(geometry), st_endpoint(geometry))) else degrees(st_azimuth(st_endpoint(geometry), st_startpoint(geometry))) end as angle from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1, -1) and st_length(geometry) > 100) as sub) as foo using unique id using srid=OSM_SRID"',
    'oneway_arrow_size': {0:0, 14:6, 17:10},
    'oneway_arrow_clr': '0 0 0',
 
