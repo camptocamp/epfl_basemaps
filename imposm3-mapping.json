@@ -668,6 +668,11 @@
                 },
                 {
                     "type": "string",
+                    "name": "parking",
+                    "key": "parking"
+                },
+                {
+                    "type": "string",
                     "name": "addr:inclusion",
                     "key": "addr:inclusion"
                 }
