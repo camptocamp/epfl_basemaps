@@ -408,8 +408,8 @@ style = {
       8:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'secondary\',\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 ) as foo using unique osm_id using srid=OSM_SRID"',
-      11:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
-      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+      11:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
+      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
     },
    'roads_opacity': 100,
 
@@ -433,6 +433,10 @@ style = {
    'other_bridge_width':{0:0.5,14:1},
    'pedestrian_bridge_clr':"136 136 136",
    'pedestrian_bridge_width':{0:0.5,14:1},
+
+   'display_oneway_arrows': {0:0, 14:1},
+   'oneway_arrow_size': {0:0, 14:6, 17:10},
+   'oneway_arrow_clr': '0 0 0',
 
    'display_highways': {
       0:0,
@@ -1606,6 +1610,7 @@ namedstyles = {
       'alley_ol_clr': '"#e3e2e0"',
       'driveway_ol_clr': '"#e3e2e0"',
       'other_service_ol_clr': '"#e3e2e0"',
+      'oneway_arrow_clr': '"#bbbbbb"',
 
       'motorway_width': {
          0:0,

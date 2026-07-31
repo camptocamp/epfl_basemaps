@@ -246,4 +246,11 @@ SYMBOL
  filled true
 END
 
+SYMBOL
+ name "oneway_arrow"
+ type vector
+ points 0 0 10 -5 10 -2 20 -2 20 2 10 2 10 5 0 0 end
+ filled true
+END
+
 END

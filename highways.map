@@ -977,6 +977,18 @@ LAYER
 #endif
 ##(display_roads_tunnels)
 
+#if _display_oneway_arrows == 1
+    CLASS
+        EXPRESSION ("[oneway]" = "1")
+        STYLE
+            SYMBOL "oneway_arrow"
+            SIZE _oneway_arrow_size
+            COLOR _oneway_arrow_clr
+            GAP 200
+        END
+    END
+#endif
+
 #if _display_service_overlay == 1
     CLASS
         EXPRESSION ("[type]" = "service" AND "[service]" = "")
