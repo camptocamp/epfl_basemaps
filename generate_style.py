@@ -198,7 +198,7 @@ style = {
       \'pitch\',\'pier\',\
       \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
       \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name, parking from OSM_SCHEMA.OSM_PREFIX_landusages \
+       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
        where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
        \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
        \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
@@ -413,7 +413,8 @@ style = {
     },
    'roads_opacity': 100,
 
-    'oneway_arrow_data': {
+   'oneway_arrow_data': {
+      0:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
       14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where st_length(geometry) > 100 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
     },
 
