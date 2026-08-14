@@ -205,7 +205,7 @@ style = {
        \'pitch\',\'pier\',\
        \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
        \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') \
-       and parking != \'underground\' order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
+       and COALESCE(parking, \'\') != \'underground\' order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
    },
    'landusage_opacity': 100,
    'display_industrial': 1,
