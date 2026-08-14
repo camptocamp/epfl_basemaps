@@ -249,7 +249,7 @@ END
 SYMBOL
  name "oneway_arrow"
  type vector
- points 0 0 6 -3 6 -1 13 -1 13 1 6 1 6 3 0 0 end
+ points 0 0 6 -3 6 -0.5 13 -0.5 13 0.5 6 0.5 6 3 0 0 end
  filled true
  anchorpoint 0.5 0.5
 END

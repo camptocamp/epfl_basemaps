@@ -1149,15 +1149,15 @@ LAYER
 #if OSM_FORCE_POSTGIS_EXTENT == 1
     EXTENT OSM_EXTENT
 #endif
-    DATA _roads_data
+    DATA _oneway_arrow_data
     PROCESSING "CLOSE_CONNECTION=DEFER"
     CLASS
         EXPRESSION ("[oneway]" = "1")
         STYLE
             SYMBOL "oneway_arrow"
             SIZE _oneway_arrow_size
-            COLOR "#000000"
-            GAP -200
+            COLOR _oneway_arrow_clr
+            GAP _oneway_arrow_gap
             ANGLE AUTO
         END
     END

@@ -403,15 +403,19 @@ style = {
 
    ###### highways #######
 
-'roads_data': {
+   'roads_data': {
       0:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen0 where type in (\'trunk\',\'motorway\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       8:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       9:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 where type in (\'secondary\',\'trunk\',\'motorway\',\'primary\') order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
       10:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type from OSM_SCHEMA.OSM_PREFIX_roads_gen1 ) as foo using unique osm_id using srid=OSM_SRID"',
       11:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc) as foo using unique osm_id using srid=OSM_SRID"',
-      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where st_length(geometry) > 50 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
     },
    'roads_opacity': 100,
+
+    'oneway_arrow_data': {
+      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where st_length(geometry) > 100 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+    },
 
    'tunnel_opacity': 40,
 
@@ -435,9 +439,9 @@ style = {
    'pedestrian_bridge_width':{0:0.5,14:1},
 
    'display_oneway_arrows': {0:0, 14:1},
-   'oneway_arrow_data': '"geometry from (select row_number() over () as id, osm_id, geom as geometry, angle from (select osm_id, st_lineinterpolatepoint(geometry, 0.25) as geom, case when oneway = 1 then degrees(st_azimuth(st_startpoint(geometry), st_endpoint(geometry))) else degrees(st_azimuth(st_endpoint(geometry), st_startpoint(geometry))) end as angle from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1, -1) and st_length(geometry) > 200 union all select osm_id, st_lineinterpolatepoint(geometry, 0.75) as geom, case when oneway = 1 then degrees(st_azimuth(st_startpoint(geometry), st_endpoint(geometry))) else degrees(st_azimuth(st_endpoint(geometry), st_startpoint(geometry))) end as angle from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1, -1) and st_length(geometry) > 200) as sub) as foo using unique id using srid=OSM_SRID"',
    'oneway_arrow_size': {0:0, 14:4, 17:7},
-   'oneway_arrow_clr': '0 0 0',
+   'oneway_arrow_clr': '"#575757"',
+   'oneway_arrow_gap': -200,
 
    'display_highways': {
       0:0,
@@ -1611,7 +1615,8 @@ namedstyles = {
       'alley_ol_clr': '"#e3e2e0"',
       'driveway_ol_clr': '"#e3e2e0"',
       'other_service_ol_clr': '"#e3e2e0"',
-      'oneway_arrow_clr': '"#000000"',
+      'oneway_arrow_clr': '"#575757"',
+      'oneway_arrow_gap': -200,
 
       'motorway_width': {
          0:0,
