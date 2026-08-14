@@ -1151,9 +1151,9 @@ LAYER
 #endif
     DATA _oneway_arrow_data
     PROCESSING "CLOSE_CONNECTION=DEFER"
-    ANGLEITEM "angle"
     CLASS
         STYLE
+            ANGLE FROM [angle]
             SYMBOL "oneway_arrow"
             SIZE _oneway_arrow_size
             COLOR _oneway_arrow_clr
