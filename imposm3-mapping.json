@@ -141,6 +141,11 @@
                     },
                     "type": "enumerate",
                     "name": "z_order"
+                },
+                {
+                    "type": "string",
+                    "name": "parking",
+                    "key": "parking"
                 }
             ],
             "type": "polygon",
@@ -665,11 +670,6 @@
                     "type": "string",
                     "name": "addr:city",
                     "key": "addr:city"
-                },
-                {
-                    "type": "string",
-                    "name": "parking",
-                    "key": "parking"
                 },
                 {
                     "type": "string",
