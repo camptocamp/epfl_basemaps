@@ -1139,7 +1139,7 @@ LAYER
     STATUS ON
     MINSCALEDENOM _minscale
     MAXSCALEDENOM _maxscale
-    TYPE POINT
+    TYPE LINE
     NAME layername(oneway_arrows,_layer_suffix)
     PROJECTION
         "init=epsg:OSM_SRID"
@@ -1149,14 +1149,16 @@ LAYER
 #if OSM_FORCE_POSTGIS_EXTENT == 1
     EXTENT OSM_EXTENT
 #endif
-    DATA _oneway_arrow_data
+    DATA _roads_data
     PROCESSING "CLOSE_CONNECTION=DEFER"
     CLASS
+        EXPRESSION ("[oneway]" = "1")
         STYLE
-            ANGLE FROM [angle]
             SYMBOL "oneway_arrow"
             SIZE _oneway_arrow_size
             COLOR _oneway_arrow_clr
+            GAP -40
+            ANGLE AUTO
         END
     END
 END
