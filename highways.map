@@ -1156,8 +1156,8 @@ LAYER
         STYLE
             SYMBOL "oneway_arrow"
             SIZE _oneway_arrow_size
-            COLOR _oneway_arrow_clr
-            GAP -40
+            COLOR "#000000"
+            GAP -200
             ANGLE AUTO
         END
     END
