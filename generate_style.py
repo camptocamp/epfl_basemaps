@@ -309,7 +309,7 @@ style = {
    'transport_lbl_ol_width': 2,
 
    'display_grass': 0,
-   'display_grass_outline': 1,
+   'display_grass_outline': 0,
    'grass_clr': '"#cdebb0"',
    'grass_ol_clr': '"#cdebb0"',
    'grass_ol_width': 0,
