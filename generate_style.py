@@ -757,7 +757,7 @@ style = {
    'pedestrian_lbl_clr': '"#333333"',
    'pedestrian_lbl_ol_clr': '255 255 255',
    'pedestrian_lbl_ol_width': 2,
-   'pedestrian_ol_width': 0.2,
+   'pedestrian_ol_width': 0.5,
    'pedestrian_ol_clr': "0 0 0",
 
    'display_tracks': {
@@ -1377,10 +1377,7 @@ namedstyles = {
          0:0,
          13:1
       },
-      'pedestrian_ol_width': {
-         0:0.2,
-         17:0.5
-      },
+      'pedestrian_ol_width': 0.5,
       'pedestrian_ol_clr': '0 0 0',
       'display_pier_outline': 1,
       'pier_ol_width': {
