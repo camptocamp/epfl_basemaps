@@ -182,6 +182,7 @@ style = {
       0:0,
       4:1
    },
+   'display_landuse_outlines': 1,
 
    'landusage_data': {
       0:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen00)\
@@ -209,6 +210,7 @@ style = {
    },
    'landusage_opacity': 100,
    'display_industrial': 1,
+   'display_industrial_outline': 1,
    'industrial_clr': '"#d1d1d1"',
    'industrial_ol_clr': '"#d1d1d1"',
    'industrial_ol_width': 0,
@@ -263,6 +265,7 @@ style = {
    'education_lbl_ol_width': 2,
 
    'display_sports': 1,
+   'display_sports_outline': 1,
    'sports_clr': '"#DED1AB"',
    'sports_ol_clr': "0 0 0",
    'sports_ol_width': 0,
@@ -306,6 +309,7 @@ style = {
    'transport_lbl_ol_width': 2,
 
    'display_grass': 0,
+   'display_grass_outline': 1,
    'grass_clr': '"#cdebb0"',
    'grass_ol_clr': '"#cdebb0"',
    'grass_ol_width': 0,
@@ -342,6 +346,7 @@ style = {
    'commercial_lbl_ol_width': 2,
 
    'display_farmland': 0,
+   'display_farmland_outline': 1,
    'farmland_clr': '"#eef0d5"',
    'farmland_ol_clr': '"#eef0d5"',
    'farmland_ol_width': 0,
@@ -354,6 +359,7 @@ style = {
    'farmland_lbl_ol_width': 2,
 
    'display_retail': 0,
+   'display_retail_outline': 1,
    'retail_clr': '"#ffd6d1"',
    'retail_ol_clr': '"#ffd6d1"',
    'retail_ol_width': 0,
@@ -366,6 +372,7 @@ style = {
    'retail_lbl_ol_width': 2,
 
    'display_scrub': 0,
+   'display_scrub_outline': 1,
    'scrub_clr': '"#c8d7ab"',
    'scrub_ol_clr': '"#c8d7ab"',
    'scrub_ol_width': 0,
@@ -378,6 +385,7 @@ style = {
    'scrub_lbl_ol_width': 2,
 
    'display_sand': 0,
+   'display_sand_outline': 1,
    'sand_clr': '"#f5e9c6"',
    'sand_ol_clr': '"#f5e9c6"',
    'sand_ol_width': 0,
@@ -390,6 +398,7 @@ style = {
    'sand_lbl_ol_width': 2,
 
    'display_wetland': 0,
+   'display_wetland_outline': 1,
    'wetland_clr': '"#d6d99f"',
    'wetland_ol_clr': '"#d6d99f"',
    'wetland_ol_width': 0,
@@ -720,6 +729,7 @@ style = {
       12:1
    },
    'display_pedestrian_outline': 0,
+   'display_riverbank_outline': 0,
    'pedestrian_clr': '"#f2f2ed"',
    'pedestrian_width': {
       0:0,
@@ -747,7 +757,7 @@ style = {
    'pedestrian_lbl_clr': '"#333333"',
    'pedestrian_lbl_ol_clr': '255 255 255',
    'pedestrian_lbl_ol_width': 2,
-   'pedestrian_ol_width': 1,
+   'pedestrian_ol_width': 0.2,
    'pedestrian_ol_clr': "0 0 0",
 
    'display_tracks': {
@@ -1368,8 +1378,8 @@ namedstyles = {
          13:1
       },
       'pedestrian_ol_width': {
-         0:0.5,
-         17:1
+         0:0.2,
+         17:0.5
       },
       'pedestrian_ol_clr': '0 0 0',
       'display_pier_outline': 1,
@@ -1587,7 +1597,9 @@ namedstyles = {
       'wetland_clr': '"#cdebb0"',
       'display_grass': 1,
       'display_parking': 1,
+      'display_parking_outline': 1,
       'display_commercial': 1,
+      'display_commercial_outline': 1,
       'display_farmland': 1,
       'display_retail': 1,
       'display_scrub': 1,

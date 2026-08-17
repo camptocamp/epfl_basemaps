@@ -34,10 +34,6 @@ LAYER
          FONT _forest_font
          SIZE _forest_lbl_size
          COLOR _forest_lbl_clr
-#if _display_forest_lbl_ol==1
-         OUTLINECOLOR _forest_lbl_ol_clr
-         OUTLINEWIDTH _forest_lbl_ol_width
-#endif
          WRAP ' '
          MAXLENGTH 6
          ALIGN CENTER
@@ -52,8 +48,6 @@ LAYER
        EXPRESSION 'residential'
        STYLE
           COLOR _residential_clr
-          OUTLINECOLOR _residential_ol_clr
-          OUTLINEWIDTH _residential_ol_width
        END
 #if _display_residential_lbl==1
       LABEL
@@ -61,10 +55,6 @@ LAYER
          FONT _residential_font
          SIZE _residential_lbl_size
          COLOR _residential_lbl_clr
-#if _display_residential_lbl_ol==1
-         OUTLINECOLOR _residential_lbl_ol_clr
-         OUTLINEWIDTH _residential_lbl_ol_width
-#endif
          WRAP ' '
          MAXLENGTH 6
          ALIGN CENTER
@@ -79,8 +69,6 @@ LAYER
       EXPRESSION 'parking'
       STYLE
         COLOR _parking_clr
-        OUTLINECOLOR _parking_ol_clr
-        OUTLINEWIDTH _parking_ol_width
       END
 #if _display_parking_lbl==1
       LABEL
@@ -89,10 +77,6 @@ LAYER
         FONT _parking_font
         SIZE _parking_lbl_size
         COLOR _parking_lbl_clr
-#if _display_parking_lbl_ol==1
-        OUTLINECOLOR _parking_lbl_ol_clr
-        OUTLINEWIDTH _parking_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -106,8 +90,6 @@ LAYER
       EXPRESSION 'commercial'
       STYLE
         COLOR _commercial_clr
-        OUTLINECOLOR _commercial_ol_clr
-        OUTLINEWIDTH _commercial_ol_width
       END
 #if _display_commercial_lbl==1
       LABEL
@@ -116,10 +98,6 @@ LAYER
         FONT _commercial_font
         SIZE _commercial_lbl_size
         COLOR _commercial_lbl_clr
-#if _display_commercial_lbl_ol==1
-        OUTLINECOLOR _commercial_lbl_ol_clr
-        OUTLINEWIDTH _commercial_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -133,8 +111,6 @@ LAYER
       EXPRESSION 'industrial'
       STYLE
         COLOR _industrial_clr
-        OUTLINECOLOR _industrial_ol_clr
-        OUTLINEWIDTH _industrial_ol_width
       END
 #if _display_industrial_lbl==1
      LABEL
@@ -143,10 +119,6 @@ LAYER
        FONT _industrial_font
        SIZE _industrial_lbl_size
        COLOR _industrial_lbl_clr
-#if _display_industrial_lbl_ol==1
-       OUTLINECOLOR _industrial_lbl_ol_clr
-       OUTLINEWIDTH _pedestrian_lbl_ol_width
-#endif
        PRIORITY 2
        WRAP ' '
        MAXLENGTH 6
@@ -171,10 +143,6 @@ LAYER
           SIZE _park_lbl_size
        ENCODING "utf-8"
           COLOR _park_lbl_clr
-#if _display_park_lbl_ol==1
-          OUTLINECOLOR _park_lbl_ol_clr
-          OUTLINEWIDTH _park_lbl_ol_width
-#endif
           PRIORITY 2
           POSITION cc
           WRAP ' '
@@ -199,10 +167,6 @@ LAYER
        ENCODING "utf-8"
             SIZE _cemetery_lbl_size
             COLOR _cemetery_lbl_clr
-#if _display_cemetery_lbl_ol==1
-            OUTLINECOLOR _cemetery_lbl_ol_clr
-            OUTLINEWIDTH _cemetery_lbl_ol_width
-#endif
             PRIORITY 2
             WRAP ' '
             MAXLENGTH 6
@@ -217,8 +181,6 @@ LAYER
       EXPRESSION {grassland,meadow,grass,village_green,garden}
       STYLE
         COLOR _grass_clr
-        OUTLINECOLOR _grass_ol_clr
-        OUTLINEWIDTH _grass_ol_width
       END
 #if _display_grass_lbl==1
       LABEL
@@ -227,10 +189,6 @@ LAYER
         FONT _grass_font
         SIZE _grass_lbl_size
         COLOR _grass_lbl_clr
-#if _display_grass_lbl_ol==1
-        OUTLINECOLOR _grass_lbl_ol_clr
-        OUTLINEWIDTH _grass_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -244,8 +202,6 @@ LAYER
       EXPRESSION {farmland,farmyard}
       STYLE
         COLOR _farmland_clr
-        OUTLINECOLOR _farmland_ol_clr
-        OUTLINEWIDTH _farmland_ol_width
       END
 #if _display_farmland_lbl==1
       LABEL
@@ -254,10 +210,6 @@ LAYER
         FONT _farmland_font
         SIZE _farmland_lbl_size
         COLOR _farmland_lbl_clr
-#if _display_farmland_lbl_ol==1
-        OUTLINECOLOR _farmland_lbl_ol_clr
-        OUTLINEWIDTH _farmland_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -271,8 +223,6 @@ LAYER
       EXPRESSION {scrub,heath}
       STYLE
         COLOR _scrub_clr
-        OUTLINECOLOR _scrub_ol_clr
-        OUTLINEWIDTH _scrub_ol_width
       END
 #if _display_scrub_lbl==1
       LABEL
@@ -281,10 +231,6 @@ LAYER
         FONT _scrub_font
         SIZE _scrub_lbl_size
         COLOR _scrub_lbl_clr
-#if _display_scrub_lbl_ol==1
-        OUTLINECOLOR _scrub_lbl_ol_clr
-        OUTLINEWIDTH _scrub_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -298,8 +244,6 @@ LAYER
       EXPRESSION {sand,bare_ground}
       STYLE
         COLOR _sand_clr
-        OUTLINECOLOR _sand_ol_clr
-        OUTLINEWIDTH _sand_ol_width
       END
 #if _display_sand_lbl==1
       LABEL
@@ -308,10 +252,6 @@ LAYER
         FONT _sand_font
         SIZE _sand_lbl_size
         COLOR _sand_lbl_clr
-#if _display_sand_lbl_ol==1
-        OUTLINECOLOR _sand_lbl_ol_clr
-        OUTLINEWIDTH _sand_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -325,8 +265,6 @@ LAYER
       EXPRESSION {wetland}
       STYLE
         COLOR _wetland_clr
-        OUTLINECOLOR _wetland_ol_clr
-        OUTLINEWIDTH _wetland_ol_width
       END
 #if _display_wetland_lbl==1
       LABEL
@@ -335,10 +273,6 @@ LAYER
         FONT _wetland_font
         SIZE _wetland_lbl_size
         COLOR _wetland_lbl_clr
-#if _display_wetland_lbl_ol==1
-        OUTLINECOLOR _wetland_lbl_ol_clr
-        OUTLINEWIDTH _wetland_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -352,8 +286,6 @@ LAYER
       EXPRESSION 'retail'
       STYLE
         COLOR _retail_clr
-        OUTLINECOLOR _retail_ol_clr
-        OUTLINEWIDTH _retail_ol_width
       END
 #if _display_retail_lbl==1
       LABEL
@@ -362,10 +294,6 @@ LAYER
         FONT _retail_font
         SIZE _retail_lbl_size
         COLOR _retail_lbl_clr
-#if _display_retail_lbl_ol==1
-        OUTLINECOLOR _retail_lbl_ol_clr
-        OUTLINEWIDTH _retail_lbl_ol_width
-#endif
         WRAP ' '
         MAXLENGTH 6
         ALIGN CENTER
@@ -378,8 +306,6 @@ LAYER
       EXPRESSION 'pedestrian'
       STYLE
          COLOR _pedestrian_clr
-         OUTLINECOLOR _pedestrian_ol_clr
-         OUTLINEWIDTH _pedestrian_ol_width
       END
 #if _display_pedestrian_lbl==1
       LABEL
@@ -387,10 +313,6 @@ LAYER
          FONT _pedestrian_font
          SIZE _pedestrian_lbl_size
          COLOR _pedestrian_lbl_clr
-#if _display_pedestrian_lbl_ol==1
-         OUTLINECOLOR _pedestrian_lbl_ol_clr
-         OUTLINEWIDTH _pedestrian_lbl_ol_width
-#endif
          WRAP ' '
          MAXLENGTH 6
          ALIGN CENTER
@@ -413,10 +335,6 @@ LAYER
           SIZE _hospital_lbl_size
           ENCODING "utf-8"
           COLOR _hospital_lbl_clr
-#if _display_hospital_lbl_ol==1
-          OUTLINECOLOR _hospital_lbl_ol_clr
-          OUTLINEWIDTH _hospital_lbl_ol_width
-#endif
           PRIORITY 1
           WRAP ' '
           MAXLENGTH 6
@@ -440,10 +358,6 @@ LAYER
           SIZE _education_lbl_size
           ENCODING "utf-8"
           COLOR _education_lbl_clr
-#if _display_education_lbl_ol==1
-          OUTLINECOLOR _education_lbl_ol_clr
-          OUTLINEWIDTH _education_lbl_ol_width
-#endif
           PRIORITY 1
           WRAP ' '
           MAXLENGTH 6
@@ -458,8 +372,6 @@ LAYER
       EXPRESSION {sports_center,stadium,pitch}
       STYLE
           COLOR _sports_clr
-          OUTLINECOLOR _sports_ol_clr
-          OUTLINEWIDTH _sports_ol_width
       END
 #if _display_sports_lbl==1
       LABEL
@@ -469,10 +381,6 @@ LAYER
         SIZE _sports_lbl_size
         ENCODING "utf-8"
         COLOR _sports_lbl_clr
-#if _display_sports_lbl_ol==1
-        OUTLINECOLOR _sports_lbl_ol_clr
-        OUTLINEWIDTH _sports_lbl_ol_width
-#endif
         PRIORITY 1
         WRAP ' '
         MAXLENGTH 6
@@ -517,10 +425,6 @@ LAYER
         FONT _transport_font
         SIZE _transport_lbl_size
         COLOR _transport_lbl_clr
-#if _display_transport_lbl_ol==1
-        OUTLINECOLOR _transport_lbl_ol_clr
-        OUTLINEWIDTH _transport_lbl_ol_width
-#endif
         PRIORITY 1
         WRAP ' '
         MAXLENGTH 6
@@ -557,23 +461,11 @@ LAYER
     CLASSITEM "type"
     CLASS
       EXPRESSION "riverbank"
-#if _display_waterarea_outline
-        STYLE
-           OUTLINECOLOR _waterarea_ol_clr
-           OUTLINEWIDTH _waterarea_ol_width
-        END
-#endif
         STYLE
             COLOR _waterarea_clr
         END
     END
     CLASS
-#if _display_waterarea_outline
-        STYLE
-           OUTLINECOLOR _waterarea_ol_clr
-           OUTLINEWIDTH _waterarea_ol_width
-        END
-#endif
         STYLE
             COLOR _waterarea_clr
         END
@@ -586,10 +478,6 @@ LAYER
           SIZE _waterarea_lbl_size
           ENCODING "utf-8"
           COLOR _waterarea_lbl_clr
-#if _display_waterarea_lbl_ol == 1
-          OUTLINECOLOR _waterarea_lbl_ol_clr
-          OUTLINEWIDTH _waterarea_lbl_ol_width
-#endif
           WRAP ' '
           MAXLENGTH 5
           ALIGN CENTER
@@ -636,10 +524,6 @@ LAYER
           MINDISTANCE 200
           SIZE _river_lbl_size
           COLOR _river_lbl_clr
-#if _display_river_lbl_ol == 1
-          OUTLINECOLOR _river_lbl_ol_clr
-          OUTLINEWIDTH _river_lbl_ol_width
-#endif
           REPEATDISTANCE 400
           ENCODING "utf-8"
           MINFEATURESIZE AUTO
@@ -663,10 +547,6 @@ LAYER
             REPEATDISTANCE 400
           SIZE _stream_lbl_size
           COLOR _stream_lbl_clr
-#if _display_stream_lbl_ol == 1
-          OUTLINECOLOR _stream_lbl_ol_clr
-          OUTLINEWIDTH _stream_lbl_ol_width
-#endif
           MINFEATURESIZE AUTO
        ENCODING "utf-8"
           ANGLE FOLLOW
@@ -689,10 +569,6 @@ LAYER
           SIZE _canal_lbl_size
           ENCODING "utf-8"
           COLOR _canal_lbl_clr
-#if _display_canal_lbl_ol == 1
-          OUTLINECOLOR _canal_lbl_ol_clr
-          OUTLINEWIDTH _canal_lbl_ol_width
-#endif
           MINFEATURESIZE AUTO
           ANGLE FOLLOW
           BUFFER 3
@@ -734,4 +610,136 @@ LAYER
     END
   END
 
+
+#if _display_landuse_outlines == 1
+## Couche affichant les bordures de toutes les surfaces landuse par-dessus les autres éléments
+## Cette couche est rendue en dernier pour garantir que les bordures soient visibles au-dessus de toutes les surfaces
+LAYER
+    TYPE POLYGON
+    STATUS ON
+    PROJECTION
+        "init=epsg:OSM_SRID"
+    END
+    NAME layername(landuse_outlines,_layer_suffix)
+    GROUP "default"
+    CONNECTIONTYPE POSTGIS
+    CONNECTION "OSM_DB_CONNECTION"
+  #if OSM_FORCE_POSTGIS_EXTENT == 1
+    EXTENT OSM_EXTENT
+  #endif
+    DATA _landusage_data
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    MAXSCALEDENOM _maxscale
+    MINSCALEDENOM _minscale
+    CLASSITEM "type"
+#if _display_residential_outline == 1
+    CLASS
+      EXPRESSION 'residential'
+      STYLE
+         OUTLINECOLOR _residential_ol_clr
+         OUTLINEWIDTH _residential_ol_width
+      END
+    END
+#endif
+#if _display_parking_outline == 1
+    CLASS
+      EXPRESSION 'parking'
+      STYLE
+         OUTLINECOLOR _parking_ol_clr
+         OUTLINEWIDTH _parking_ol_width
+      END
+    END
+#endif
+#if _display_commercial_outline == 1
+    CLASS
+      EXPRESSION 'commercial'
+      STYLE
+         OUTLINECOLOR _commercial_ol_clr
+         OUTLINEWIDTH _commercial_ol_width
+      END
+    END
+#endif
+#if _display_industrial_outline == 1
+    CLASS
+      EXPRESSION 'industrial'
+      STYLE
+         OUTLINECOLOR _industrial_ol_clr
+         OUTLINEWIDTH _industrial_ol_width
+      END
+    END
+#endif
+#if _display_grass_outline == 1
+    CLASS
+      EXPRESSION {grassland,meadow,grass,village_green,garden}
+      STYLE
+         OUTLINECOLOR _grass_ol_clr
+         OUTLINEWIDTH _grass_ol_width
+      END
+    END
+#endif
+#if _display_farmland_outline == 1
+    CLASS
+      EXPRESSION {farmland,farmyard}
+      STYLE
+         OUTLINECOLOR _farmland_ol_clr
+         OUTLINEWIDTH _farmland_ol_width
+      END
+    END
+#endif
+#if _display_scrub_outline == 1
+    CLASS
+      EXPRESSION {scrub,heath}
+      STYLE
+         OUTLINECOLOR _scrub_ol_clr
+         OUTLINEWIDTH _scrub_ol_width
+      END
+    END
+#endif
+#if _display_sand_outline == 1
+    CLASS
+      EXPRESSION {sand,bare_ground}
+      STYLE
+         OUTLINECOLOR _sand_ol_clr
+         OUTLINEWIDTH _sand_ol_width
+      END
+    END
+#endif
+#if _display_wetland_outline == 1
+    CLASS
+      EXPRESSION {wetland}
+      STYLE
+         OUTLINECOLOR _wetland_ol_clr
+         OUTLINEWIDTH _wetland_ol_width
+      END
+    END
+#endif
+#if _display_retail_outline == 1
+    CLASS
+      EXPRESSION 'retail'
+      STYLE
+         OUTLINECOLOR _retail_ol_clr
+         OUTLINEWIDTH _retail_ol_width
+      END
+    END
+#endif
+#if _display_sports_outline == 1
+    CLASS
+      EXPRESSION {sports_center,stadium,pitch}
+      STYLE
+         OUTLINECOLOR _sports_ol_clr
+         OUTLINEWIDTH _sports_ol_width
+      END
+    END
+#endif
+#if _display_pedestrian_outline == 1
+    CLASS
+      EXPRESSION 'pedestrian'
+      STYLE
+         OUTLINECOLOR _pedestrian_ol_clr
+         OUTLINEWIDTH _pedestrian_ol_width
+      END
+    END
+#endif
+END
+#endif
   #endif
