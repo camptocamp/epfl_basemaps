@@ -422,9 +422,11 @@ style = {
     },
    'roads_opacity': 100,
 
-   'oneway_arrow_data': {
-      0:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
-      14:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where st_length(geometry) > 100 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+    'oneway_arrow_data': {
+      # Handle one-way roads (oneway=1 and oneway=-1)
+      # ST_Reverse() inverts geometry for oneway=-1 so ANGLE AUTO works correctly
+      0:'"geometry from (select osm_id,CASE WHEN oneway=-1 THEN ST_Reverse(geometry) ELSE geometry END as geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1,-1) order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
+      14:'"geometry from (select osm_id,CASE WHEN oneway=-1 THEN ST_Reverse(geometry) ELSE geometry END as geometry,OSM_NAME_COLUMN as name,ref,type,oneway,bridge,tunnel,coalesce(service,\'\') as service from OSM_SCHEMA.OSM_PREFIX_roads where oneway in (1,-1) and st_length(geometry) > 50 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
     },
 
    'tunnel_opacity': 40,
@@ -451,7 +453,7 @@ style = {
    'display_oneway_arrows': {0:0, 14:1},
    'oneway_arrow_size': {0:0, 14:4, 17:7},
    'oneway_arrow_clr': '"#575757"',
-   'oneway_arrow_gap': -200,
+   'oneway_arrow_gap': -100,
 
    'display_highways': {
       0:0,
@@ -1625,7 +1627,6 @@ namedstyles = {
       'driveway_ol_clr': '"#e3e2e0"',
       'other_service_ol_clr': '"#e3e2e0"',
       'oneway_arrow_clr': '"#575757"',
-      'oneway_arrow_gap': -200,
 
       'motorway_width': {
          0:0,

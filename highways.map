@@ -1152,7 +1152,8 @@ LAYER
     DATA _oneway_arrow_data
     PROCESSING "CLOSE_CONNECTION=DEFER"
     CLASS
-        EXPRESSION ("[oneway]" = "1")
+        ## Accept both oneway=1 (forward) and oneway=-1 (backward)
+        EXPRESSION ("[oneway]" = "1" OR "[oneway]" = "-1")
         STYLE
             SYMBOL "oneway_arrow"
             SIZE _oneway_arrow_size
