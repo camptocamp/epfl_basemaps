@@ -895,25 +895,28 @@ style = {
    'tree_data': {
       0:'"geometry from (select geometry, osm_id from OSM_SCHEMA.OSM_PREFIX_trees) as foo using unique osm_id using srid=OSM_SRID"'
    },
-   'tree_clr': '"#90cb7c"',
+   'tree_clr': '"#9ab88e"',
    'tree_size': {
-      0:3,
-      16:3,
-      17:4,
-      18:5
+      0:0,
+      16:2.5,
+      17:5,
+      18:10,
+      19:15,
+      20:30
    },
-   'tree_trunk_clr': '"#b27f36"',
+   'tree_trunk_clr': '"#6b8d5e"',
    'display_tree_trunk': {
       0:0,
-      17:1
+      18:1
    },
    'tree_trunk_size': {
       0:0,
-      17:1,
-      18:2
+      18:2,
+      19:3,
+      20:6
    },
-   'tree_opacity': 100,
-   'tree_trunk_opacity': 100,
+   'tree_opacity': 60,
+   'tree_trunk_opacity': 40,
 
    ##### borders ######
    'border_data': '"data/boundaries.shp"',
@@ -1789,33 +1792,6 @@ namedstyles = {
       'footway_pattern': '2 2',
       'footway_ol_width': 1,
       'footway_ol_clr': '"#ffffff"',
-
-      'display_trees': {
-         0:0,
-         16:1
-      },
-      'tree_clr': '"#9ab88e"',
-      'tree_size': {
-         0:0,
-         16:2.5,
-         17:5,
-         18:10,
-         19:15,
-         20:30
-      },
-      'display_tree_trunk': {
-         0:0,
-         18:1
-      },
-      'tree_trunk_clr': '"#6b8d5e"',
-      'tree_trunk_size': {
-         0:0,
-         18:2,
-         19:3,
-         20:6
-      },
-      'tree_opacity': 60,
-      'tree_trunk_opacity': 40,
    },
    'bing':{
       'motorway_clr': '"#BAC3A8"',
@@ -1986,11 +1962,9 @@ namedstyles = {
        'canal_clr': '"#000000"',
        'stream_clr': '"#000000"',
        'river_clr': '"#000000"',
-       'river_clr': '"#000000"',
        'canal_lbl_clr': '"#000000"',
        'stream_lbl_clr': '"#000000"',
        'river_lbl_clr': '"#000000"',
-
 
        'motorway_bridge_clr':"255 255 255",
        'trunk_bridge_clr':"255 255 255",
@@ -2049,6 +2023,10 @@ namedstyles = {
       'sports_clr': '"#f7efb7"',
       'sports_ol_clr': '"#eeeeb4"',
       'sports_ol_width': 0.3,
+      'tree_clr': '"#90cb7c"',
+      'tree_trunk_clr': '"#b27f36"',
+      'tree_opacity': 100,
+      'tree_trunk_opacity': 100,
    },
 }
 
