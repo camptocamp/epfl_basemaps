@@ -129,6 +129,29 @@ LAYER
 #endif
     END
 #endif
+#if _display_railway==1
+    CLASS
+      EXPRESSION 'railway'
+      STYLE
+        COLOR _landuse_railway_clr
+      END
+#if _display_railway_lbl==1
+     LABEL
+       ENCODING "utf-8"
+       TYPE TRUETYPE
+       FONT _railway_font
+       SIZE _railway_lbl_size
+       COLOR _railway_lbl_clr
+       PRIORITY 2
+       WRAP ' '
+       MAXLENGTH 6
+       ALIGN CENTER
+       MINFEATURESIZE AUTO
+       PARTIALS FALSE
+     END
+#endif
+    END
+#endif
 #if _display_park==1
     CLASS
         EXPRESSION {park,golf_course}

@@ -192,21 +192,21 @@ style = {
       9:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
       where type in (\'forest\',\'wood\',\'industrial\',\'commercial\',\'residential\',\
       \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\'parking\',\'farmland\',\'farmyard\')) as foo using unique osm_id using srid=OSM_SRID"',
-      10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
-      where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
-      \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
-      \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
-      \'pitch\',\'pier\',\
-      \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
-      \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
-       12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
+       10:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages_gen1 \
        where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
        \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
        \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
        \'pitch\',\'pier\',\
        \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
-       \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\') \
-       and COALESCE(parking, \'\') != \'underground\' order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
+       \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\',\'railway\') order by area desc) as foo using unique osm_id using srid=OSM_SRID"',
+        12:'"geometry from (select geometry ,osm_id, type, OSM_NAME_COLUMN as name from OSM_SCHEMA.OSM_PREFIX_landusages \
+        where type in (\'forest\',\'wood\',\'pedestrian\',\'cemetery\',\'industrial\',\'commercial\',\
+        \'brownfield\',\'residential\',\'school\',\'college\',\'university\',\
+        \'military\',\'park\',\'golf_course\',\'hospital\',\'parking\',\'stadium\',\'sports_center\',\
+        \'pitch\',\'pier\',\
+        \'grassland\',\'meadow\',\'grass\',\'village_green\',\'garden\',\
+        \'farmland\',\'farmyard\',\'retail\',\'scrub\',\'heath\',\'sand\',\'bare_ground\',\'wetland\',\'railway\') \
+        and COALESCE(parking, \'\') != \'underground\' order by area desc) as foo using unique osm_id using srid=OSM_SRID"'
    },
    'landusage_opacity': 100,
    'display_industrial': 1,
@@ -214,6 +214,12 @@ style = {
    'industrial_clr': '"#d1d1d1"',
    'industrial_ol_clr': '"#d1d1d1"',
    'industrial_ol_width': 0,
+   'display_railway': {0:0, 10:1},
+   'landuse_railway_clr': '"#ebdbe8"',
+   'display_railway_lbl': 0,
+   'railway_font': "sc",
+   'railway_lbl_size': 8,
+   'railway_lbl_clr': '0 0 0',
    'display_industrial_lbl' : {0:0, 11:1},
    'display_industrial_lbl_ol': 1,
    'industrial_font': "sc",
