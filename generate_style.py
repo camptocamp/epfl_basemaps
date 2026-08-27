@@ -1594,6 +1594,15 @@ namedstyles = {
       'pedestrian_clr': '"#dddde8"',
       'railway_clr': '"#888888"',
 
+      # no label outline on OSM style
+      'label_outline_primaries': 0,
+      'label_outline_secondaries': 0,
+      'label_outline_tertiaries': 0,
+      'label_outline_other_roads': 0,
+      'label_outline_pedestrian': 0,
+      'label_outline_track': 0,
+      'label_outline_buildings': 0,
+
       'farmland_clr': '"#eef0d5"',
       'grass_clr': '"#cdebb0"',
       'commercial_clr': '"#f2dad9"',
